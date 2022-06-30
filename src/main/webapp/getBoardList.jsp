@@ -5,12 +5,8 @@
 <%@page import="com.springbook.biz.board.BoardVO"%>
 
 <%
-// 1. 사용자 입력 정보 추출 (검색 기능 추후에 추가할 예정)
-
-// 2. DB 연동 처리
-BoardVO vo = new BoardVO();
-BoardDAO boardDAO = new BoardDAO();
-List<BoardVO> boardList = boardDAO.getBoardList(vo);
+// 세션에 저장된 글 목록을 꺼낸다.
+List<BoardVO> boardList = (List) session.getAttribute("boardList");
 
 // 3. 응답 화면 구성
 %>
@@ -25,7 +21,7 @@ List<BoardVO> boardList = boardDAO.getBoardList(vo);
 	<center>
 		<h1>글 목록</h1>
 		<h3>
-			테스트님 환영합니다... <a href="logout_proc.jsp">Log-out</a>
+			테스트님 환영합니다... <a href="logout_do">Log-out</a>
 		</h3>
 
 
@@ -58,7 +54,7 @@ List<BoardVO> boardList = boardDAO.getBoardList(vo);
 			<tr>
 				<td><%=board.getSeq()%></td>
 				<td align="left"><a
-					href="getBoard.jsp?seq=<%=board.getSeq()%>"><%=board.getTitle()%></a></td>
+					href="getBoard.do?seq=<%=board.getSeq()%>"><%=board.getTitle()%></a></td>
 				<td><%=board.getWriter()%></td>
 				<td><%=board.getRegDate()%></td>
 				<td><%=board.getCnt()%></td>
@@ -66,9 +62,8 @@ List<BoardVO> boardList = boardDAO.getBoardList(vo);
 			<%
 			}
 			%>
-
 		</table>
-		<br> <a href="inserBoard.jsp">새글 등록</a>
+		<br><a href="inserBoard.jsp">새글 등록</a>
 	</center>
 </body>
 </html>

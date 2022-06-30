@@ -3,7 +3,7 @@
 <%@page import="com.springbook.biz.board.Impl.BoardDAO"%>
 <%@page import="com.springbook.biz.board.BoardVO"%>
 <%
-//1. 사용자 입력 정보 추출
+	//1. 사용자 입력 정보 추출
 	request.setCharacterEncoding("UTF-8");
 
 	String title = request.getParameter("title");

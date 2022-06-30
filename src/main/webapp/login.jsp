@@ -10,7 +10,7 @@
 	<center>
 		<h1>로그인</h1>
 		<hr>
-		<form action="login_proc.jsp" method="post">
+		<form action="login.do" method="post">
 			<table border="1">
 				<tr>
 					<td bgcolor="orange">아이디</td>
@@ -18,6 +18,7 @@
 				</tr>
 				<tr>
 					<td bgcolor="orange">비밀번호</td>
+
 					<td><input type="password" name="password" /></td>
 				</tr>
 				<tr>
