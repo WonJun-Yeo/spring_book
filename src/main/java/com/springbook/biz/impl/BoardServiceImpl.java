@@ -7,16 +7,15 @@ import org.springframework.stereotype.Service;
 
 import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
-import com.springbook.biz.board.Impl.BoardDAOSpring;
+import com.springbook.biz.board.Impl.BoardDAO;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
-	private BoardDAOSpring boardDAO;
+	private BoardDAO boardDAO;
 
 	@Override
 	public void insertBoard(BoardVO vo) {
-		boardDAO.insertBoard(vo);
 		boardDAO.insertBoard(vo);
 	}
 
